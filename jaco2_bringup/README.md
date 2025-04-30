@@ -4,7 +4,7 @@
 
 ---
 
-### 🧠 Purpose
+### 🧠 <ins>Purpose</ins>
 
 The `jaco2_bringup` package simplifies launching complex multi-node setups by bundling them into clean, reusable **Bash scripts**. These scripts orchestrate Gazebo, MoveIt 2, and controller nodes across **separate terminals**, making it easy to debug, monitor, and manage your simulation environment in real-time.
 
@@ -14,7 +14,7 @@ This is especially helpful for:
 - Automation of startup sequences
 <br>
 
-### 📁 <ins>Package Structure
+### 📁 <ins>Package Structure</ins>
 
 ```bash
 jaco2_bringup
