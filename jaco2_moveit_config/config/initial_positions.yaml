@@ -1,0 +1,12 @@
+# Default initial positions for jaco2's ros2_control fake system
+
+initial_positions:
+  jaco2_joint_1: 0
+  jaco2_joint_2: 3.141
+  jaco2_joint_3: 0
+  jaco2_joint_4: 3.141
+  jaco2_joint_5: 0
+  jaco2_joint_6: 3.141
+  jaco2_joint_7: 0
+  jaco2_joint_finger_1: 0.0
+  jaco2_joint_finger_tip_1: 0.0

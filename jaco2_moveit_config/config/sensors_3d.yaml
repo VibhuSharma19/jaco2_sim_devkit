@@ -1,0 +1,24 @@
+sensors: ["camera_pointcloud"]
+#  - camera_depth_image
+camera_pointcloud:
+    sensor_plugin: occupancy_map_monitor/PointCloudOctomapUpdater
+    point_cloud_topic: /rgbd_camera/point_cloud
+    max_range: 5.0
+    point_subsample: 1
+    padding_offset: 0.1
+    padding_scale: 1.0
+    max_update_rate: 1.0
+    filtered_cloud_topic: "/rgbd_camera/filtered_topic"
+    debug: true
+#camera_2_depth_image:
+#    sensor_plugin: occupancy_map_monitor/DepthImageOctomapUpdater
+#    image_topic: /rgbd_camera/depth_image
+#    queue_size: 5
+#    near_clipping_plane_distance: 0.3
+#    far_clipping_plane_distance: 15.0
+#    shadow_threshold: 0.2
+#    padding_offset: 0.1
+#    padding_scale: 1.0
+#    max_update_rate: 1.0
+#    filtered_cloud_topic: ""
+

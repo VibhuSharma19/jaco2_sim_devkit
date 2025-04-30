@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+    <name>jaco2_sim_devkit</name>
+    <version>1.0.0</version>
+    <description>Jaco2 7dof manipulator ROS2-Moveit2 simulation project meta-package</description>
+    <maintainer email="1999vibhusharma@gmail.com">Vibhu Sharma</maintainer>
+    <license>BSD-3-Clause</license>
+
+    <buildtool_depend>ament_cmake</buildtool_depend>
+    <buildtool_depend>ament_python</buildtool_depend>
+
+    <test_depend>ament_lint_auto</test_depend>
+    <test_depend>ament_lint_common</test_depend>
+
+    <depend>jaco2_description</depend>
+    <depend>jaco2_controller</depend>
+    <depend>jaco2_moveit_config</depend>
+    <depend>jaco2_moveit_demos</depend>
+    <depend>jaco2_servo</depend>
+    <depend>jaco2_utils</depend>
+    <depend>jaco2_moveit_task_constructor</depend>
+    <depend>jaco2_gazebo</depend>
+    <depend>jaco2_bringup</depend>
+    <depend>jaco2_jaco_arm_ikfast_plugin</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

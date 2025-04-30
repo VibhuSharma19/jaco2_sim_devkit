@@ -1,0 +1,14 @@
+jaco_arm:
+  kinematics_solver: trac_ik_kinematics_plugin/TRAC_IKKinematicsPlugin
+  kinematics_solver_timeout: 0.0050000000000000001
+  position_only_ik: false 
+  kinematics_solver_attempts: 5
+  epsilon: 0.00001
+  solve_type: "Speed"
+jaco_gripper:
+  kinematics_solver: trac_ik_kinematics_plugin/TRAC_IKKinematicsPlugin
+  kinematics_solver_timeout: 0.0050000000000000001
+  position_only_ik: true
+  kinematics_solver_attempts: 5
+  epsilon: 0.00001
+  solve_type: "Speed"

@@ -1,0 +1,54 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 1000
+
+    arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    gripper_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+arm_controller:
+  ros__parameters:
+    joints:
+      - jaco2_joint_1
+      - jaco2_joint_2
+      - jaco2_joint_3
+      - jaco2_joint_4
+      - jaco2_joint_5
+      - jaco2_joint_6
+      - jaco2_joint_7
+
+    command_interfaces:
+      - position
+
+    state_interfaces:
+      - position
+    
+    open_loop_control: false
+
+    allow_integration_in_goal_trajectories: true
+    
+    allow_nonzero_velocity_at_trajectory_end: true
+
+
+gripper_controller:
+  ros__parameters:
+    joints:
+      - jaco2_joint_finger_1
+      - jaco2_joint_finger_tip_1
+      
+    command_interfaces:
+      - position
+
+    state_interfaces:
+      - position
+    
+    open_loop_control: false
+
+    allow_integration_in_goal_trajectories: true
+    
+    allow_nonzero_velocity_at_trajectory_end: true

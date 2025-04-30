@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+   <link name="camera_stand">
+      <inertial>
+         <origin xyz="0.0 0.0 0.5" rpy="0.0 0.0 0.0"/>
+         <mass value="1.0"/>
+         <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
+      <visual name="base">
+         <origin xyz="0.0 0.0 0.05" rpy="0.0 0.0 0.0"/>
+         <geometry>
+            <box size="0.08 0.08 0.15"/>
+         </geometry>
+         <material name="Gazebo/Yellow" >
+            <texture filename="file://scripts/gazebo.material"/>
+         </material>
+      </visual>
+      <visual name="pole">
+         <origin xyz="0.0 0.0 0.4" rpy="0.0 0.0 0.0"/>
+         <geometry>
+            <cylinder radius="0.02" length="0.8"/>
+         </geometry>
+         <material name="Gazebo/Orange">
+            <texture filename="file://scripts/gazebo.material"/>
+         </material>  
+      </visual>
+      <collision>
+         <origin xyz="0.0 0.0 0.2" rpy="0.0 0.0 0.0"/>
+         <geometry>
+            <box size="0.16 0.16 0.6"/>
+         </geometry>
+      </collision>
+   </link>
+
+   <joint name="camera_stand_joint" type="fixed">
+      <parent link="jaco2_link_base"/>
+      <child link="camera_stand"/>
+      <origin xyz="-0.6 -1.2 0.0" rpy="0.0 0.0 0.0"/>
+   </joint> 
+
+   <link name="rgbd_camera"/>
+
+   <joint name="camera_mount" type="fixed">
+      <parent link="camera_stand"/>
+      <child link="rgbd_camera"/>
+      <origin xyz="0.0 0.0 0.95" rpy="0.0 0.0 0.98"/>
+   </joint>
+
+   <link name="rgbd_camera_frame"/>
+
+   <joint name="camera_frame" type="fixed">
+      <parent link="rgbd_camera"/>
+      <child link="rgbd_camera_frame"/>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.57 0.0 -1.57"/>
+   </joint>
+
+   <link name="rgbd_optical_frame" />
+
+   <joint name="rgbd_depth" type="fixed">
+      <parent link="rgbd_camera_frame"/>
+      <child link="rgbd_optical_frame"/>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.57 0.0 -1.57"/>
+   </joint>
+   
+   
+</root>

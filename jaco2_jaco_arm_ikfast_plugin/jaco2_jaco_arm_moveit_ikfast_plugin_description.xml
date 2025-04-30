@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<library path="jaco2_jaco_arm_moveit_ikfast_plugin">
+  <class name="jaco2_jaco_arm/IKFastKinematicsPlugin" type="jaco2_jaco_arm::IKFastKinematicsPlugin" base_class_type="kinematics::KinematicsBase">
+    <description>IKFast61 plugin for closed-form kinematics of jaco2 jaco_arm</description>
+  </class>
+</library>

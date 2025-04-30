@@ -1,0 +1,165 @@
+<?xml version = "1.0" ?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="jaco2">
+
+    <ros2_control name="GazeboSimSystem" type='system' >
+
+        <hardware>
+            <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+        </hardware>
+
+
+        <xacro:property name="J_PI" value="3.14159265359" />
+        
+        <xacro:property name="joint_1_lower_limit" value="${-2*J_PI}" />
+        <xacro:property name="joint_1_upper_limit" value="${2*J_PI}" />
+
+        <xacro:property name="joint_2_lower_limit" value="${47/180*J_PI}" />
+        <xacro:property name="joint_2_upper_limit" value="${313/180*J_PI}" />
+
+        <xacro:property name="joint_3_lower_limit" value="${-2*J_PI}" />
+        <xacro:property name="joint_3_upper_limit" value="${2*J_PI}" />
+
+        <xacro:property name="joint_4_lower_limit" value="${30/180*J_PI}" />
+        <xacro:property name="joint_4_upper_limit" value="${330/180*J_PI}" />
+
+        <xacro:property name="joint_5_lower_limit" value="${-2*J_PI}" />
+        <xacro:property name="joint_5_upper_limit" value="${2*J_PI}" />
+
+        <xacro:property name="joint_6_lower_limit" value="${65/180*J_PI}" />
+        <xacro:property name="joint_6_upper_limit" value="${295/180*J_PI}" />
+
+        <xacro:property name="joint_7_lower_limit" value="${-2*J_PI}" />
+        <xacro:property name="joint_7_upper_limit" value="${2*J_PI}" />
+
+        <xacro:property name="finger_lower_limit" value="0.0" />
+        <xacro:property name="finger_upper_limit" value="1.51" />
+
+        <xacro:property name="finger_tip_lower_limit" value="0.0" />
+        <xacro:property name="finger_tip_upper_limit" value="2" />
+
+
+        <joint name="jaco2_joint_1">
+            <command_interface name="position">
+            <param name="min">${joint_1_lower_limit}</param>
+            <param name="max">${joint_1_upper_limit}</param>
+            </command_interface>
+            <state_interface name="position">
+            <param name="initial_value">0.0</param>
+            </state_interface>
+        </joint>
+
+        <joint name="jaco2_joint_2">
+            <command_interface name="position">
+            <param name="min">${joint_2_lower_limit}</param>
+            <param name="max">${joint_2_upper_limit}</param>
+            </command_interface>
+            <state_interface name="position">
+            <param name="initial_value">${J_PI}</param>
+            </state_interface>
+        </joint>
+
+        <joint name="jaco2_joint_3">
+            <command_interface name="position">
+            <param name="min">${joint_3_lower_limit}</param>
+            <param name="max">${joint_3_upper_limit}</param>
+            </command_interface>
+            <state_interface name="position">
+            <param name="initial_value">0.0</param>
+            </state_interface>
+        </joint>
+
+        <joint name="jaco2_joint_4">
+            <command_interface name="position">
+            <param name="min">${joint_4_lower_limit}</param>
+            <param name="max">${joint_4_upper_limit}</param>
+            </command_interface>
+            <state_interface name="position">
+            <param name="initial_value">${J_PI}</param>
+            </state_interface>
+        </joint>
+
+        <joint name="jaco2_joint_5">
+            <command_interface name="position">
+            <param name="min">${joint_5_lower_limit}</param>
+            <param name="max">${joint_5_upper_limit}</param>
+            </command_interface>
+            <state_interface name="position">
+            <param name="initial_value">0.0</param>
+            </state_interface>
+        </joint>
+
+        <joint name="jaco2_joint_6">
+            <command_interface name="position">
+            <param name="min">${joint_6_lower_limit}</param>
+            <param name="max">${joint_6_upper_limit}</param>
+            </command_interface>
+            <state_interface name="position">
+            <param name="initial_value">${J_PI}</param>
+            </state_interface>
+        </joint>
+
+        <joint name="jaco2_joint_7">
+            <command_interface name="position">
+            <param name="min">${joint_7_lower_limit}</param>
+            <param name="max">${joint_7_upper_limit}</param>
+            </command_interface>
+            <state_interface name="position">
+            <param name="initial_value">0.0</param>
+            </state_interface>
+        </joint>
+
+        <joint name="jaco2_joint_finger_1">
+            <command_interface name="position">
+            <param name="min">${finger_lower_limit}</param>
+            <param name="max">${finger_upper_limit}</param>
+            </command_interface>
+            <state_interface name="position">
+            <param name="initial_value">0.000</param>
+            </state_interface>
+        </joint>
+
+        <joint name="jaco2_joint_finger_2">
+            <param name="mimic">jaco2_joint_finger_1</param>
+            <param name="multiplier">1</param>
+            <state_interface name="position">
+            </state_interface>
+        </joint>
+
+        <joint name="jaco2_joint_finger_3">
+            <param name="mimic">jaco2_joint_finger_1</param>
+            <param name="multiplier">1</param>
+            <state_interface name="position">
+            </state_interface>
+        </joint>
+
+        <joint name="jaco2_joint_finger_tip_1">
+            <command_interface name="position">
+            <param name="min">${finger_tip_lower_limit}</param>
+            <param name="max">${finger_tip_upper_limit}</param>
+            </command_interface>
+            <state_interface name="position">
+            <param name="initial_value">0.0</param>
+            </state_interface>
+        </joint>
+
+        <joint name="jaco2_joint_finger_tip_2">
+            <param name="mimic">jaco2_joint_finger_tip_1</param>
+            <param name="multiplier">1</param>
+            <state_interface name="position">
+            </state_interface>
+        </joint>
+
+        <joint name="jaco2_joint_finger_tip_3">
+            <param name="mimic">jaco2_joint_finger_tip_1</param>
+            <param name="multiplier">1</param>
+            <state_interface name="position">
+            </state_interface>
+        </joint>
+
+    </ros2_control>
+
+</robot>
+
+
+    
